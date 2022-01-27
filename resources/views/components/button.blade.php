@@ -49,7 +49,7 @@
         $classes .= ' rounded-md';
     } else if ($pill) {
         $classes .= ' rounded-full';
-        
+
     }
 
 @endphp

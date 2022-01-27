@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\StoreController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,15 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::group(['middleware' => 'auth'], function(){
+
+
+    // stores manage management .
+    Route::get('stores',[StoreController::class, 'index'])->name('store.index');
+    Route::get('stores/active/{id}', [StoreController::class, 'active'])->name('store.active');
+    Route::get('stores/enactive/{id}', [StoreController::class, 'enactive'])->name('store.enactive');
+});
 
 // useless routes
 // Just to demo sidebar dropdown links active states.

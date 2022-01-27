@@ -11,8 +11,8 @@
             <x-heroicon-o-view-grid class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
         </x-slot>
 
-        <x-sidebar.sublink title="المتاجر المسجلة" href="{{ route('buttons.text') }}"
-            :active="request()->routeIs('buttons.text')" />
+        <x-sidebar.sublink title="المتاجر المسجلة" href="{{ route('store.index') }}"
+            :active="request()->routeIs('store.index')" />
         <x-sidebar.sublink title="طلبات تسجيل المتاجر" href="{{ route('buttons.icon') }}"
             :active="request()->routeIs('buttons.icon')" />
         <x-sidebar.sublink title="الدفعيات" href="{{ route('buttons.text-icon') }}"
